@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --bg-container: #F5F5F5;
+  --bg-btn-operation: #F02EA3;
+  --btn-border-dark-mode: #CCA1BD;
+  --color-number: #000000;
+  --color-light-number: #fff;
+  --bg-btn-number: #D9D9D9;
+  --bg-btn-light-blue: #2C2945;
+  --bg-dark-blue: #141332;
+  --bg-body: #8c8fa7;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-body);
+}
+
+.container{
+  margin-top: 1px;
+  width: 361px;
+  height: 625px;
+  background-color: var(--bg-container);
+  border-radius: 20px;
+  transition: background 0.5s;
+}
+
+.container.active{
+  background-color: var(--bg-dark-blue);
+}
+
+/* ---- DARK MODE ---- */
+
+.head{
+  display: flex;
+  justify-content: flex-end;
+  margin: 19px 20px 0 0;
+}
+
+.btn-dark-mode{
+  display: flex;
+  justify-content: space-evenly;
+  width: 70px;
+  height: 29px;
+  border: 1px solid var(--btn-border-dark-mode);
+  box-shadow: 0px 0px 3px 1px #C173A673;
+  border-radius: 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-dark-mode:before{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border: 1px solid var(--btn-border-dark-mode);
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  transition: left 0.5s;
+}
+
+.btn-dark-mode.active:before{ 
+  left: 38px;
+}
+
+/* ---- SCREEN ---- */
+
+.screen{
+  font-size: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 142px;
+  margin-right: 20px;
+  transition: 0.5s;
+}
+
+#result.active{
+  color: var(--color-light-number);
+}
+
+/* ---- BUTTONS ----*/
+
+.buttons{
+  display: flex;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 0px 0px 20px 20px;
+  height: 64px;
+  width: 64px;
+  background-color: var(--bg-btn-number);
+  color: var(--color-number);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-operator{
+  color: var(--color-light-number);
+  background-color: var(--bg-btn-operation);
+}
+
+.btn-big{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 0 0 0 20px;
+  height: 64px;
+  width: 149px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.zero{
+  background-color: var(--bg-btn-number);
+}
+
+.btn-number.active{
+  background-color: var(--bg-btn-light-blue);
+  color: var(--color-light-number);
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <div class="container">
+    <section class="head">
+      <div class="btn-dark-mode"></div>
+    </section>
+    <section class="screen">
+      <div id="result"></div>
+    </section>
+    <section class="operations">
+      <div class="buttons">
+        <div class="btn btn-operator" onclick="clean()">c</div>
+        <div class="btn btn-operator" onclick="back()"><img src="./img/backClear.svg" alt=""></div>
+        <div class="btn btn-operator" onclick="insert('/')">÷</div>
+        <div class="btn btn-operator" onclick="insert('*')">&times;</div>
+      </div>
+      <div class="buttons">
+        <div class="btn btn-number" onclick="insert('7')">7</div>
+        <div class="btn btn-number" onclick="insert('8')">8</div>
+        <div class="btn btn-number" onclick="insert('9')">9</div>
+        <div class="btn btn-operator" onclick="insert('-')">-</div>
+      </div>
+      <div class="buttons">
+        <div class="btn btn-number" onclick="insert('4')">4</div>
+        <div class="btn btn-number" onclick="insert('5')">5</div>
+        <div class="btn btn-number" onclick="insert('6')">6</div>
+        <div class="btn btn-operator" onclick="insert('+')">+</div>
+      </div>
+      <div class="buttons">
+        <div class="btn btn-number" onclick="insert('1')">1</div>
+        <div class="btn btn-number" onclick="insert('2')">2</div>
+        <div class="btn btn-number" onclick="insert('3')">3</div>
+        <div class="btn btn-operator" onclick="insert('.')">.</div>
+      </div>
+      <div class="buttons">
+        <div class="btn-big btn-number zero" onclick="insert('0')">0</div>
+        <div class="btn-big btn-operator comma" onclick="calculate()">=</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./function.js"></script>
+</body>
+</html>
