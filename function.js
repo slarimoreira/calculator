@@ -1,22 +1,27 @@
 // ---- BUTTON DARK MODE ---- //
 
-const btnMode = document.querySelector('.btn-dark-mode');
-const container = document.querySelector('.container');
-const result = document.querySelector('#result');
-const btnNumber = document.getElementsByClassName('btn-number')
+var btnMode = document.querySelector('.btn-dark-mode');
+let html = document.querySelector('html');
 
-btnMode.onclick = function(){
-  this.classList.toggle('active') 
-  container.classList.toggle('active')
-  result.classList.toggle('active') 
- 
-  let len = btnNumber.length
+btnMode.addEventListener('click', function(){
+  btnMode.classList.toggle('active-dark');
+  html.classList.toggle('active');
 
-  for(let i = 0; i < len; i++){
-    btnNumber[i].classList.toggle('active');
+  localStorage.setItem('classButton', btnMode.className);
+  localStorage.setItem('classHTML', html.className);
+
+})
+
+function loadState(){
+  const classButton = localStorage.getItem('classButton');
+  const classHTML = localStorage.getItem('classHTML');
+
+  if(classButton && classHTML){
+    btnMode.className = classButton;
+    html.className = classHTML;
   }
-
 }
+
 
 // ---- CALCULATOR ---- //
 
@@ -42,3 +47,5 @@ function calculate(){
     document.getElementById('result').innerHTML = eval(result)
   }
 }
+
+loadState()

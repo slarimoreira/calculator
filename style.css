@@ -13,10 +13,18 @@
   --bg-btn-operation: #F02EA3;
   --btn-border-dark-mode: #CCA1BD;
   --color-number: #000000;
-  --color-light-number: #fff;
+  --color-number-operator: #fff;
   --bg-btn-number: #D9D9D9;
-  --bg-btn-light-blue: #2C2945;
-  --bg-dark-blue: #141332;
+  --bg-body: #8c8fa7;
+}
+
+.active:root{
+  --bg-container: #141332;
+  --bg-btn-operation: #F02EA3;
+  --btn-border-dark-mode: #CCA1BD;
+  --color-number: #fff;
+  --color-number-operator: #fff;
+  --bg-btn-number: #2C2945;
   --bg-body: #8c8fa7;
 }
 
@@ -36,10 +44,6 @@ body{
   transition: background 0.5s;
 }
 
-.container.active{
-  background-color: var(--bg-dark-blue);
-}
-
 /* ---- DARK MODE ---- */
 
 .head{
@@ -49,6 +53,7 @@ body{
 }
 
 .btn-dark-mode{
+  -webkit-appearance: none;
   display: flex;
   justify-content: space-evenly;
   width: 70px;
@@ -74,7 +79,7 @@ body{
   transition: left 0.5s;
 }
 
-.btn-dark-mode.active:before{ 
+.btn-dark-mode.active-dark:before{ 
   left: 38px;
 }
 
@@ -91,8 +96,12 @@ body{
   transition: 0.5s;
 }
 
-#result.active{
-  color: var(--color-light-number);
+#result{
+  display: flex;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-number);
+  max-width: 100%;
 }
 
 /* ---- BUTTONS ----*/
@@ -118,7 +127,7 @@ body{
 }
 
 .btn-operator{
-  color: var(--color-light-number);
+  color: var(--color-number-operator);
   background-color: var(--bg-btn-operation);
 }
 
@@ -138,9 +147,5 @@ body{
 
 .zero{
   background-color: var(--bg-btn-number);
-}
-
-.btn-number.active{
-  background-color: var(--bg-btn-light-blue);
-  color: var(--color-light-number);
+  color: var(--color-number);
 }
